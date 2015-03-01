@@ -40,7 +40,7 @@ $(function () {
             txt = marked(txt);
             tmp += txt + '</div>';
         }
-        if(parent.text === "events"){
+        if(parent.text === "Events"){
            var el = $('.panel #-'+cfg.text.toLowerCase()+'-');
             if (el.length > 0){
                el = el.parent();

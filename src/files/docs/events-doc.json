@@ -1,0 +1,215 @@
+{
+	"text" : "Docpad Lib",
+	"id" : "root",
+	"children" : [{
+			"id" : "I0",
+			"text" : "Events",
+			"typ" : "events",
+			"icon" : "events",
+			"comments" : ["Event Listing", "Whenever a event is created, it must be applied here to be available to plugins and configuration files", "https://github.com/bevry/docpad/wiki/Events"],
+			"code" : [],
+			"children" : [{
+					"id" : "I39",
+					"text" : "extendTemplateData",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : ["fired each load"],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I40",
+					"text" : "extendCollections",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : ["fired each load"],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I41",
+					"text" : "docpadLoaded",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : ["fired multiple times, first time command line configuration hasn't been applied yet"],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I42",
+					"text" : "docpadReady",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : ["fired only once"],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I43",
+					"text" : "docpadDestroy",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : ["fired once on shutdown"],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I44",
+					"text" : "consoleSetup",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : ["fired once"],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I45",
+					"text" : "generateBefore",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : [],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I46",
+					"text" : "populateCollectionsBefore",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : [],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I47",
+					"text" : "populateCollections",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : [],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I48",
+					"text" : "contextualizeBefore",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : [],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I49",
+					"text" : "contextualizeAfter",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : [],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I50",
+					"text" : "renderBefore",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : [],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I51",
+					"text" : "renderCollectionBefore",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : [],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I52",
+					"text" : "render",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : ["fired for each extension conversion"],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I53",
+					"text" : "renderDocument",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : ["fired for each document render, including layouts and render passes"],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I54",
+					"text" : "renderCollectionAfter",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : [],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I55",
+					"text" : "renderAfter",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : [],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I56",
+					"text" : "writeBefore",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : [],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I57",
+					"text" : "writeAfter",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : [],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I58",
+					"text" : "generateAfter",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : [],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I59",
+					"text" : "generated",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : [],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I60",
+					"text" : "serverBefore",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : [],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I61",
+					"text" : "serverExtend",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : [],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I62",
+					"text" : "serverAfter",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : [],
+					"code" : [],
+					"children" : []
+				}, {
+					"id" : "I63",
+					"text" : "notify",
+					"typ" : "event",
+					"icon" : "event",
+					"comments" : [],
+					"code" : [],
+					"children" : []
+				}
+			]
+		}
+	]
+}

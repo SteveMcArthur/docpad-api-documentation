@@ -40,5 +40,11 @@
                 "file" : "document-doc.json",
                 "origfile" : "document.coffee",
                 "children" : true
+				},{
+                "id" : "I0",
+                "text" : "Events",
+                "file" : "events-doc.json",
+                "origfile" : "docpad.coffee",
+                "children" : true
                 }]
 }

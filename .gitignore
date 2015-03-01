@@ -11,3 +11,4 @@ orig/
 
 *.bat
 *.env
+.brackets.json
