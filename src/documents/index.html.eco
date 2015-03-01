@@ -1,0 +1,305 @@
+---
+layout: base
+title: Docpad API
+---
+
+
+<div class="row">
+    <div id="sidebar" class="small-3 columns">
+        <div id="tree-container"></div>
+
+
+    </div>
+
+    <div id="tab-container" class="small-9 columns">
+        <div id="split-bar"></div>
+        <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+            <ul id="tab-list" class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active ui-state-hover" role="tab" tabindex="0" aria-controls="tabs-1" aria-labelledby="ui-id-1" aria-selected="true" aria-expanded="true"><a href="#tabs-1" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">API docs</a>
+                </li>
+            </ul>
+            <div id="tabs-1" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="false">
+                <div class="tab-content"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<article id="events-html" style="display:none;">
+
+    <div class="panel">
+        <h3 id="-extendtemplatedata-"><code>extendTemplateData</code></h3>
+        <p>Called each time the configuration for DocPad reloads. Called after most of the configuration has loaded and when it is time to extend our template data.</p>
+        <p><strong>Options:</strong>
+        </p>
+        <ul>
+            <li><code>templateData</code> the object to inject your additions to</li>
+        </ul>
+        <p>Use to inject new template data variables and helpers into the template data.</p>
+        <p><strong>Examples:</strong>
+        </p>
+        <ul>
+            <li><a href="https://docpad.org/plugin/services">Services Plugin</a>
+            </li>
+            <li><a href="https://docpad.org/plugin/feedr">Feedr Plugin</a>
+            </li>
+        </ul>
+
+    </div>
+    <div class="panel">
+        <h3 id="-extendcollections-"><code>extendCollections</code></h3>
+        <p>Called each time the configuration for DocPad reloads. Called after most of the configuration has loaded and when it is time to extend our collections.</p>
+        <p>Use to create additional collections.</p>
+        <p><strong>Examples:</strong>
+        </p>
+        <ul>
+            <li><a href="https://docpad.org/plugin/partials">Partials Plugin</a>
+            </li>
+        </ul>
+
+    </div>
+    <div class="panel">
+        <h3 id="-docpadloaded-"><code>docpadLoaded</code></h3>
+        <p>Called each time the configuration for DocPad reloads. Called before <code>docpadReady</code> as we have to load the configuration in order to be ready.</p>
+
+    </div>
+    <div class="panel">
+        <h3 id="-docpadready-"><code>docpadReady</code></h3>
+        <p>Called once DocPad when DocPad is now ready to perform actions which is once it has finished initializing and loading its configuration. Partnered with the <code>docpadDestroy</code> event.</p>
+
+    </div>
+    <div class="panel">
+        <h3 id="-consolesetup-"><code>consoleSetup</code></h3>
+        <p>Called once the command line interface for DocPad has loaded.</p>
+        <p><strong>Options:</strong>
+        </p>
+        <ul>
+            <li><code>consoleInterface</code> the console interface instance we are using</li>
+            <li><code>commander</code> the instance of <a href="https://github.com/visionmedia/commander.js">commander</a> we are using</li>
+        </ul>
+        <p>Use to extend the console interface with additional commands.</p>
+        <p><strong>Examples:</strong>
+        </p>
+        <ul>
+            <li><a href="https://docpad.org/plugin/ghpages">GitHub Pages Plugin</a>
+            </li>
+        </ul>
+
+    </div>
+    <div class="panel">
+        <h3 id="-populatecollectionsbefore-"><code>populateCollectionsBefore</code></h3>
+        <p>Called just before we start to insert dynamic files into the database. Called before each generation, just before the <code>generateBefore</code> event. Partnered with the <code>populateCollections</code> event.</p>
+    </div>
+    <div class="panel">
+        <h3 id="-populatecollections-"><code>populateCollections</code></h3>
+        <p>Called just after we've inserted dynamic files into the collections. Called before each generation, just before the <code>generateBefore</code> event. Partnered with the <code>populateCollectionsBefore</code> event.</p>
+        <p>Use this for inserting your dynamic files into the database.</p>
+        <p><strong>Examples:</strong>
+        </p>
+        <ul>
+            <li><a href="https://docpad.org/plugin/tumblr">Tumblr Importer Plugin</a>
+            </li>
+        </ul>
+
+    </div>
+    <div class="panel">
+        <h3 id="-generatebefore-"><code>generateBefore</code></h3>
+        <p>Called just before we start generating your project. Partnered with the <code>generateAfter</code> event.</p>
+        <p><strong>Options:</strong>
+        </p>
+        <ul>
+            <li><code>reset</code> whether or not this is a partial- (<code>false</code>) or full-regeneration (<code>true</code>)</li>
+            <li><del><code>server</code></del>
+                <ins>Deprecated; use <code>getServer()</code> API method instead</ins>
+            </li>
+        </ul>
+
+    </div>
+    <div class="panel">
+        <h3 id="-del-code-parsebefore-code-del-"><del><code>parseBefore</code></del></h3>
+        <p><ins>Deprecated/removed since DocPad v6.58.0.</ins> See <a href="https://github.com/bevry/docpad/issues/736">issue #736</a> for information.</p>
+
+    </div>
+    <div class="panel">
+        <h3 id="-del-code-parseafter-code-del-"><del><code>parseAfter</code></del></h3>
+        <p><ins>Deprecated/removed since DocPad v6.58.0.</ins> See <a href="https://github.com/bevry/docpad/issues/736">issue #736</a> for information.</p>
+
+    </div>
+    <div class="panel">
+        <h3 id="-conextualizebefore-"><code>conextualizeBefore</code></h3>
+        <p>Called just before we start to contextualize all the files. Partnered with the <code>contextualizeAfter</code> event. Contextualizing is the process of adding layouts and awareness of other documents to our document.</p>
+        <p><strong>Options:</strong>
+        </p>
+        <ul>
+            <li><code>collection</code> the collection we are working with</li>
+            <li><del><code>templateData</code></del>
+                <ins>Deprecated; use <code>extendTemplateData</code> event instead</ins>
+            </li>
+        </ul>
+
+    </div>
+    <div class="panel">
+        <h3 id="-contextualizeafter-"><code>contextualizeAfter</code></h3>
+        <p>Called just after we've finished contextualize all the files. Partnered with the <code>conextualizeBefore</code> event. Contextualizing is the process of adding layouts and awareness of other documents to our document.</p>
+        <p><strong>Options:</strong>
+        </p>
+        <ul>
+            <li><code>collection</code> the collection we are working with</li>
+            <li><del><code>templateData</code></del>
+                <ins>Deprecated; use <code>extendTemplateData</code> event instead</ins>
+            </li>
+        </ul>
+
+    </div>
+    <div class="panel">
+        <h3 id="-renderbefore-"><code>renderBefore</code></h3>
+        <p>Called just before we start rendering all the files. Partnered with the <code>renderAfter</code> event.</p>
+        <p><strong>Options:</strong>
+        </p>
+        <ul>
+            <li><code>collection</code> a <a href="https://github.com/bevry/query-engine">query-engine</a> [collection][] containing the models we are about to render</li>
+            <li><code>templateData</code> the template data that will be provided to the documents</li>
+        </ul>
+
+    </div>
+    <div class="panel">
+        <h3 id="-rendercollectionbefore-"><code>renderCollectionBefore</code></h3>
+        <p>Triggered before a render collection is about to be rendered. Added by <a href="https://github.com/Delapouite">Bruno Heridet</a> with <a href="https://github.com/bevry/docpad/pull/608">Pull Request #608</a>.</p>
+        <p><strong>Options:</strong>
+        </p>
+        <ul>
+            <li><code>collection</code> a <a href="https://github.com/bevry/query-engine">query-engine</a> [collection][] containing the models we are about to render</li>
+            <li><code>renderPass</code> which render pass is this render collection for?</li>
+        </ul>
+
+    </div>
+    <div class="panel">
+        <h3 id="-rendercollectionafter-"><code>renderCollectionAfter</code></h3>
+        <p>Triggered before a render collection is about to be rendered. Added by <a href="https://github.com/Delapouite">Bruno Heridet</a> with <a href="https://github.com/bevry/docpad/pull/608">Pull Request #608</a>.</p>
+        <p><strong>Options:</strong>
+        </p>
+        <ul>
+            <li><code>collection</code> a <a href="https://github.com/bevry/query-engine">query-engine</a> [collection][] containing the models we are about to render</li>
+            <li><code>renderPass</code> which render pass is this render collection for?</li>
+        </ul>
+
+    </div>
+    <div class="panel">
+        <h3 id="-render-"><code>render</code></h3>
+        <p>Called per document, for each extension conversion.</p>
+        <p>Use to render one extension to another.</p>
+        <p><strong>Options:</strong>
+        </p>
+        <ul>
+            <li><code>inExtension</code> the extension we are rendering from</li>
+            <li><code>outExtension</code> the extension we are rendering to</li>
+            <li><code>templateData</code> the template data that we will use for this document's rendering</li>
+            <li><code>file</code> the model instance for the document we are rendering</li>
+            <li><code>content</code> the current content that this document contains, you shall overwrite this option with any updates you do</li>
+        </ul>
+        <p><strong>Notes:</strong> The file <code>blah.html.md.eco</code> will call trigger this event twice. The first time for the <code>eco</code> to <code>md</code> conversion. The second time for the <code>md</code> to <code>html</code> conversion.</p>
+        <p><strong>Example:</strong> You would check the <code>inExtension</code> and <code>outExtension</code> options to make sure we only apply our rendering for the desired extension conversions. To apply the rendering, we would write our result back to <code>opts.content</code>. For example here is a render event handler that will convert the content of files to upper case when named like <code>file.txt.captialize|uppercase|upper</code>:</p>
+        <pre class="highlight"><code class="hljs coffeescript"><span class="hljs-attribute">render</span>: <span class="hljs-function"><span class="hljs-params">(opts)</span> -&gt;</span>
+    <span class="hljs-comment"># Prepare</span>
+    {inExtension,outExtension,templateData,file,content} = opts
+    docpad = <span class="hljs-property">@docpad</span>
+
+    <span class="hljs-comment"># Render if applicable</span>
+    <span class="hljs-keyword">if</span> inExtension <span class="hljs-keyword">in</span> [<span class="hljs-string">'capitalize'</span>,<span class="hljs-string">'uppercase'</span>,<span class="hljs-string">'upper'</span>] <span class="hljs-keyword">and</span> outExtension <span class="hljs-keyword">in</span> [<span class="hljs-string">'txt'</span>]
+        opts.content = content.toUpperCase() <span class="hljs-comment"># your conversion to be saved</span>
+</code></pre>
+
+    </div>
+    <div class="panel">
+        <h3 id="-renderdocument-"><code>renderDocument</code></h3>
+        <p>Called per document, after all the extensions have been rendered.</p>
+        <p>Use to perform transformations to the entire document.</p>
+        <p><strong>Options:</strong>
+        </p>
+        <ul>
+            <li><code>extension</code> the resulted extension for our document</li>
+            <li><code>templateData</code> the template data that we will use for this document's rendering</li>
+            <li><code>file</code> the model instance for the document we are rendering</li>
+            <li><code>content</code> the current content that this document contains, you shall overwrite this option with any updates you do</li>
+        </ul>
+        <p><strong>Notes:</strong> It is also called for each of the layout rendering for the document, as well as for each <a href="/docpad/faq#what-are-render-passes">render pass</a>, as such care should be taken with ensuring your transformation does not re-transform an already transformed part.</p>
+        <p><strong>Example:</strong> <a href="http://docpad.org/plugin/pygments">The Pygments Plugin</a> more or less uses this event to search for all <code>&lt;code&gt;</code> HTML elements that have the CSS class <code>highlight</code> (e.g., <code>&lt;code class="highlight"&gt;</code>) and replaces the element with one that has been syntax highlighted by the popular <a href="http://pygments.org">pygments</a> syntax highlighting engine.</p>
+
+    </div>
+    <div class="panel">
+        <h3 id="-renderafter-"><code>renderAfter</code></h3>
+        <p>Called just just after we've rendered all the files. Partnered with the <code>renderBefore</code> event.</p>
+        <p><strong>Options:</strong>
+        </p>
+        <ul>
+            <li><code>collection</code> a <a href="https://github.com/bevry/query-engine">query-engine</a> [collection][] containing the models we've rendered</li>
+        </ul>
+    </div>
+    <div class="panel">
+        <h3 id="-writebefore-"><code>writeBefore</code></h3>
+        <p>Called just before we start writing all the files. Partnered with the <code>writeAfter</code> event.</p>
+        <p><strong>Options:</strong>
+        </p>
+        <ul>
+            <li><code>collection</code> a <a href="https://github.com/bevry/query-engine">query-engine</a> [collection][] containing the models we are about to write</li>
+            <li><code>templateData</code> the template data that was provided to the documents</li>
+        </ul>
+
+    </div>
+    <div class="panel">
+        <h3 id="-writeafter-"><code>writeAfter</code></h3>
+        <p>Called just just after we've wrote all the files. Partnered with the <code>writeBefore</code> event.</p>
+        <p><strong>Options:</strong>
+        </p>
+        <ul>
+            <li><code>collection</code> a <a href="https://github.com/bevry/query-engine">query-engine</a> <a href="https://github.com/bevry/query-engine/wiki/Using">collection</a> containing the models we are about to render</li>
+        </ul>
+
+    </div>
+    <div class="panel">
+        <h3 id="-generateafter-"><code>generateAfter</code></h3>
+        <p>Called just after we've finished generating your project. Partnered with the <code>generateBefore</code> event.</p>
+
+    </div>
+    <div class="panel">
+        <h3 id="-generated-"><code>generated</code></h3>
+        <p>Called just after the initial generation has completed.</p>
+
+    </div>
+    <div class="panel">
+        <h3 id="-serverbefore-"><code>serverBefore</code></h3>
+        <p>Called just before we start setting up the server. Partnered with the <code>serverAfter</code> event.</p>
+
+    </div>
+    <div class="panel">
+        <h3 id="-serverextend-"><code>serverExtend</code></h3>
+        <p>Called just while we are setting up the server, and just before the DocPad routes are applied.</p>
+        <p>Use to extend the server with routes that will be triggered before the DocPad routes.</p>
+        <p><strong>Options:</strong>
+        </p>
+        <ul>
+            <li><code>server</code> and <code>serverExpress</code> are the <a href="http://expressjs.com">Express.js</a> server instance we are using</li>
+            <li><code>serverHttp</code> is the raw Node.js HTTP server we are using</li>
+            <li><code>express</code> is the Express module we are using</li>
+        </ul>
+
+    </div>
+    <div class="panel">
+        <h3 id="-serverafter-"><code>serverAfter</code></h3>
+        <p>Called just after we finished setting up the server.</p>
+        <p>Use to extend the server with routes that will be triggered after the DocPad routes.</p>
+        <p><strong>Options:</strong>
+        </p>
+        <ul>
+            <li><code>server</code> and <code>serverExpress</code> are the <a href="http://expressjs.com">Express.js</a> server instance we are using</li>
+            <li><code>serverHttp</code> is the raw Node.js HTTP server we are using</li>
+            <li><code>express</code> is the Express module we are using</li>
+        </ul>
+
+    </div>
+    <div class="panel">
+        <h3 id="-docpaddestroy-"><code>docpadDestroy</code></h3>
+        <p>Called when it is time for DocPad to shutdown. Partnered with the <code>docpadReady</code> event.</p>
+        <p>Use this to shutdown anything inside your plugins, close all connections, file system handlers, files, etc.</p>
+    </div>
+</article>

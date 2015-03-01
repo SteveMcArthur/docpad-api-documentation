@@ -1,0 +1,118 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<!--[if IE 10]><html class="ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+		<%-@getPreparedTitle()%>
+	</title>
+    <meta name="description" content="<%=@getPreparedDescription() %>" />
+	<meta name="keywords" content="<%=@getPreparedKeywords() %>" />
+    <link rel="shortcut icon" href="/favicon.ico">
+    <%-@getBlock( 'styles').add(@site.styles).add(@document.styles).toHTML()%>
+    <script src="/js/modernizr.js"></script>
+
+</head>
+
+<body style="padding-top: 60px; width: 100%;">
+    <div id="page-wrapper">
+        <div class="fixed">
+            <!-- Header and Nav -->
+            <nav class="top-bar">
+                <ul class="title-area">
+                    <!-- Title Area -->
+                    <li class="name">
+                        <h1>
+                        <a href="/">Docpad<span>API</span>
+                        </a>
+                    </h1>
+                    </li>
+                    <li class="toggle-topbar menu-icon">
+                        <a href="#">
+                            <span>Menu</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <section class="top-bar-section">
+                    <!-- Left Nav Section -->
+
+                    <ul class="right">
+                        <li>
+                            <input type="text" class="form-control search" placeholder="Search">
+                        </li>
+                    </ul>
+
+
+                </section>
+            </nav>
+        </div>
+        <div class="content-wrapper">
+            <section id="main-content">
+                <%-@content%>
+            </section>
+
+
+            <div class="page-footer-bottom">
+                <div class="row">
+                    <ul class="site-links">
+                        <li class="name">
+                            <a href="/">Docpad API</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <%-@getBlock( 'scripts').add(@site.scripts,{defer:false}).toHTML()%>
+    <script>
+        $(document).foundation();
+        $(function () {
+            var min = 0;
+            var max = 3600;
+            var mainmin = 200;
+            $('#split-bar').mousedown(function (e) {
+                e.preventDefault();
+                $(document).mousemove(function (e) {
+                    e.preventDefault();
+                    var x = e.pageX - $('#sidebar').offset().left;
+                    if (x > min && x < max && e.pageX < ($(window).width() - mainmin)) {
+                        $('#sidebar').css("width", x);
+                        $('#tab-container').css("margin-left", x);
+                    }
+                })
+            });
+            $(document).mouseup(function (e) {
+                $(document).unbind('mousemove');
+            });
+
+            var h1 = 58;
+            var h2 = 66;
+
+            function onResize() {
+                var ht = $(window).height();
+                var y = ht - h1 - h2;
+                $('#sidebar').css("height", ht - 92 - h1);
+                $('#tab-container').css("height", y+6);
+                 $('.ui-tabs-panel').css("height", y - 29);
+
+            }
+
+            onResize();
+
+            $(window).on('resize', function () {
+                onResize();
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

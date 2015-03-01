@@ -1,0 +1,162 @@
+.ui-tabs .ui-tabs-panel {
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: fixed;
+    width: 75%;
+}
+.ui-tab-content {
+    height: 100%;
+}
+
+#tab-container {
+    height: 86%;
+    margin-left: 25%;
+    background: #f1f2f7;
+    padding: 0;
+    width: 75%;
+    position: fixed;
+
+}
+#tab-list{
+    margin-top: -2px;
+    margin-left: -2px;
+    height: 29px;
+    border-color: #fff;
+    border-radius: 0;
+}
+#tabs {
+    border: none;
+    background: none;
+
+}
+
+
+.ui-widget-header {
+    background: #ffffff;
+    border: none;
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active{
+    background: #f1f2f7;
+}
+
+.sidebar {
+    margin-top: 5px;
+    padding-top: 10px;
+    width: 20%;
+    float: left;
+    height: 95%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.tab-content {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding-right: 10px;
+}
+.ui-widget {
+    font: 0.8em Tahoma, Verdana, Arial, sans-serif;
+}
+
+
+.jstree-default .jstree-icon.method {
+    background-image: none;
+}
+.jstree-default .jstree-icon.method:before {
+    color: #278AD5;
+    content: "\f1e0";
+}
+.jstree-default .jstree-icon.prop:before {
+    color:   #dd2d70;
+    content: "\f013";
+}
+.jstree-default .jstree-icon.event:before, .jstree-default .jstree-icon.events:before {
+    color:   #DDD42D;
+    content: "\f0e7";
+}
+.jstree-default .jstree-icon.number:before {
+    color:   #6700FF;
+    content: "\f162";
+}
+.jstree-default .jstree-icon.string:before {
+    color:   #6700FF;
+    content: "\f031";
+}
+
+.jstree-default .jstree-themeicon {
+     background-image: none;
+}
+.jstree-default .jstree-themeicon:before {
+   content: "\f02e";
+   color: #42B047;
+   text-shadow: -2px 1px 3px rgba(0,0,0,0.25);
+}
+#root_anchor > .jstree-themeicon:before {
+    content: "\f02b";
+    color: #0F8E1F;
+}
+
+
+.jstree-default .jstree-icon {
+  font-family: "FontAwesome";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  text-decoration: inherit;
+  font-size: 16px;
+}
+/**
+
+.jstree-default .jstree-hovered {
+  background: #e7f4f9;
+  color: #666666;
+  border-radius: 2px;
+  box-shadow: inset 0 0 1px #cccccc;
+}
+.jstree-default .jstree-clicked {
+  background: #beebff;
+  color: #666666;
+  border-radius: 2px;
+  box-shadow: inset 0 0 1px #999999;
+}
+**/
+
+.tab-content pre {
+    font-size: 13px;
+    background-color: #f7f7f7;
+    border: solid 1px #e8e8e8;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    color: #314e64;
+    font-family: "Menlo", "Courier New", "Courier", monospace;
+    padding: 10px 12px 10px 12px;
+    line-height: 1.3em;
+    margin: 10px 0 14px 0;
+/*    max-width: 900px;*/
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-top: 0;
+}
+.tab-content .code-title {
+    margin: 0;
+    font-weight: bold;
+    margin-top: 10px;
+    padding-left: 12px;
+}
+.tab-content .member {
+    border-style: solid;
+    border-color: #e0e0e0;
+    border-width: 0 0 1px 0;
+}
+.tab-content .comments,
+pre .comment {
+    font-style: italic;
+    color: #DD2D70
+}
