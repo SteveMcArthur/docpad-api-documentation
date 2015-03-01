@@ -1,6 +1,6 @@
 {
   "name": "docpad-api-browser",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Docpad API browser",
   "engines": {
     "node": "0.10.36",

@@ -15,7 +15,7 @@ docpadConfig = {
         # Specify some site properties
         site:
             # The production url of our website
-            url: "https://docpad-api.herokuapp.com/"
+            url: "http://docpad-api.herokuapp.com"
 
             # Here are some old site urls that you would like to redirect from
             oldUrls: []
