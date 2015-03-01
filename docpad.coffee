@@ -94,39 +94,6 @@ docpadConfig = {
             @site.keywords.concat(@document.keywords or []).join(', ')
 
 
-        combined: null
-        minified: null
-        getCSSMinified:  ->
-            if((@combined == null) || (@combined != null && @minified != null))
-                @getCSSCombined()
-            CleanCSS = require('clean-css')
-            opts =
-                keepSpecialComments: '*'
-                keepBreaks: false
-                benchmark: false
-                processImport: true
-                noRebase: false
-                noAdvanced: true
-                debug: false
-            @minified = new CleanCSS(opts).minify(@combined).styles
-            return @minified
-
-        getCSSCombined: ->
-            if ((@combined == null) || (@combined != null && @minified != null))
-                @minified = null
-                css = @getCollection('cssFiles').toJSON()
-                devStyles = @site.devStyles
-                output = ""
-                devStyles.forEach (fname) ->
-                    for doc in css
-                        if fname == doc.url
-                            output+= "/**"+doc.filename+"**/\n" + doc.content+"\n"
-                @combined = output
-            @getCSSMinified()
-
-            return @combined
-
-
     # Collections
 
     collections:
@@ -184,15 +151,9 @@ docpadConfig = {
 
             # Redirect any requests accessing one of our sites oldUrls to the new site url
             server.use (req,res,next) ->
-                endChar = req.url.substr(req.url.length-1,1)
-                slashless = req.url
-                dumbURL = "/"+newUrl
 
                 if req.headers.host in oldUrls
                     res.redirect(newUrl+req.url, 301)
-                else if endChar == "/" && slashless != "/"
-                    slashless = slashless.substr(0,slashless.length-1)
-                    res.redirect(slashless, 301)
                 else
                     next()
 
