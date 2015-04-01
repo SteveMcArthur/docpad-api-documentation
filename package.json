@@ -8,18 +8,18 @@
   },
   "dependencies": {
     "clean-css": "3.0.10",
-    "docpad": "6.69.2",
+    "docpad": "~6.78.1",
     "docpad-plugin-cleanurls": "~2.7.0",
     "docpad-plugin-coffeekup": "~2.2.0",
-    "docpad-plugin-coffeescript": "~2.4.0",
+    "docpad-plugin-coffeescript": "~2.5.0",
     "docpad-plugin-eco": "~2.1.0",
-    "docpad-plugin-partials": "~2.9.1"
+    "docpad-plugin-partials": "~2.9.2"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
     "start": "node_modules/docpad/bin/docpad-server"
   },
   "devDependencies": {
-    "docpad-plugin-livereload": "~2.6.0"
+    "docpad-plugin-livereload": "~2.6.1"
   }
 }
